@@ -2,6 +2,8 @@
 
 namespace App\API\Entity;
 
+use App\API\Core\Container;
+
 class Country implements \JsonSerializable {
 
     private $id;
@@ -47,7 +49,8 @@ class Country implements \JsonSerializable {
      */
     public function getCityId():?int
     {
-        return $this->city_id;
+       return $this->city_id;
+
     }
 
     /**
@@ -59,11 +62,21 @@ class Country implements \JsonSerializable {
     }
 
 
+    public function getCity(){
+        $container = new Container();
+        $city = $container->get('repository.city');
+
+        $test = $city->findById($this->city_id);
+        return $test;
+    }
+
+
     public function jsonSerialize(){
         return [
             'id' => $this->getId(),
             'name' => $this->getName(),
-            'city_id' => $this->getCityId()
+            'city_id' => $this->getCityId(),
+            'city' => $this->getCity()
         ];
     }
 

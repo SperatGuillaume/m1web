@@ -26,7 +26,8 @@ class Container{
               $this->services['core.database']()
           );},
           'controller.country' => function(){ return new \App\API\Controller\CountryController(
-                $this->services['repository.country']()
+                $this->services['repository.country'](),
+                $this->services['repository.city']()
           );}
         ];
 

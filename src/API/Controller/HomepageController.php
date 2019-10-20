@@ -14,7 +14,6 @@ class HomepageController extends AbstractController{
     }
 
     public function index(array $uriVars = []){
-
         //dump($this->cityRepository->findAll());
         $this->render([
             'cities' => $this->cityRepository->findAll()

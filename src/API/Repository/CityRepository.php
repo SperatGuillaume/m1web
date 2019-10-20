@@ -35,9 +35,9 @@ class CityRepository{
 
     public function findById(int $id){
         $sql = "
-            SELECT country.*
-            FROM destination.country
-            WHERE country.id=$id;
+            SELECT city.*
+            FROM destination.city
+            WHERE city.id=$id;
         ";
         $query = $this->connection->prepare($sql);
         $query->execute([

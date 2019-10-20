@@ -13,7 +13,7 @@ class Router{
             'method' => 'index'
         ],
         '#^/countries$#' =>[
-            'controller' => 'controller.homepage',
+            'controller' => 'controller.country',
             'method' => 'index'
         ],
     ];

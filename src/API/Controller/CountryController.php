@@ -10,24 +10,18 @@ use App\API\Repository\CityRepository;
 class CountryController extends AbstractController{
 
 
-    private $cityRespository;
+    private $cityRepository;
     private $countryRepository;
 
-    public function __construct(CountryRepository $countryRepository){
+    public function __construct(CountryRepository $countryRepository, CityRepository $cityRepository){
         $this->countryRepository = $countryRepository;
+        $this->cityRepository = $cityRepository;
+
     }
 
     public function index(array $uriVars = []){
 
-        //dump($this->cityRepository->findAll());
-        /*$countries = $this->countryRepository->findAll();
-        foreach ($countries as $k=>$country){
 
-            $id=$country->getCityId();
-            $city = $this->cityRespository->findById($id);
-            dump($id);
-        }*/
-        //dump($results);
 
 
         $this->render([
