@@ -32,4 +32,21 @@ class CityRepository{
         return $results;
 
     }
+
+    public function findById(int $id){
+        $sql = "
+            SELECT country.*
+            FROM destination.country
+            WHERE country.id=$id;
+        ";
+        $query = $this->connection->prepare($sql);
+        $query->execute([
+            'id'=>$id
+        ]);
+
+        $results = $query->fetchObject('App\API\Entity\City');
+
+        return $results;
+    }
+
 }

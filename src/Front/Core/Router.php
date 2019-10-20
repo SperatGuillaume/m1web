@@ -11,7 +11,11 @@ class Router{
         '#^/(?<id>\d+)$#' =>[
             'controller' => 'controller.homepage',
             'method' => 'index'
-        ]
+        ],
+        '#^/countries$#' =>[
+            'controller' => 'controller.homepage',
+            'method' => 'index'
+        ],
     ];
 
     private  $route = [

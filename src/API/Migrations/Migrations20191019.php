@@ -13,8 +13,8 @@ class Migrations20191019 extends AbstractMigrations {
         INSERT INTO destination.city
         VALUES
           (NULL, 'paris', 'paris.jpg'),
-          (NULL, 'lyon', 'lyon.jpg'),
-          (NULL, 'annecy', 'annecy.jpg')
+          (NULL, 'madrid', 'lyon.jpg'),
+          (NULL, 'londre', 'annecy.jpg')
         ;
     ";
 
